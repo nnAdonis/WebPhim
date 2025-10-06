@@ -19,9 +19,10 @@ import {
 } from "lucide-react";
 import Avata from "../Avata.tsx";
 import {useState} from "react";
+import {ArrayJewery, ArrayNation} from "../../lib/Data.ts";
 
 const Dropdown = () => {
-    const arrayJewery=[['anime','#'], ['anime','#'],['anime','#'], ['anime','#']];
+
   return(
       <>
           <DropdownMenu>
@@ -32,10 +33,10 @@ const Dropdown = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className='relative top-2 left-50 grid grid-cols-4 !text-white !bg-[#1b1a22]/80  border-none w-120'>
                   {
-                      arrayJewery.map(([key,value], i) =>(
-                          <DropdownMenuItem key={i} className='!bg-[#1b1a22]/10 p-0 w-full' >
-                              <a href={value} className='hover:text-yellow-300 capitalize hover:bg-[#22242c] rounded-sm  pt-2 pr-4 pl-4 pb-2 w-full'>
-                                  {key}
+                      ArrayJewery.map((jewery) =>(
+                          <DropdownMenuItem key={jewery.id} className='!bg-[#1b1a22]/10 p-0 w-full' >
+                              <a href={jewery.url} className='hover:text-yellow-300 capitalize hover:bg-[#22242c] rounded-sm  pt-2 pr-4 pl-4 pb-2 w-full'>
+                                  {jewery.name}
                               </a>
                           </DropdownMenuItem>
                       ))
@@ -47,7 +48,7 @@ const Dropdown = () => {
 }
 
 const DropdownNation = () => {
-    const arrayNation=[['anime','#'], ['anime','#'],['anime','#'], ['anime','#']];
+
 
     return(
         <>
@@ -59,10 +60,10 @@ const DropdownNation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className='relative top-2 left-4.5 flex flex-col justify-center items-start !text-white !bg-[#1b1a22]/90  border-none'>
                     {
-                        arrayNation.map(([key,value], i) =>(
-                            <DropdownMenuItem key={i} className='!bg-[#1b1a22]/10 p-0 w-full' >
-                                <a href={value} className='hover:text-yellow-300 capitalize hover:bg-[#22242c] rounded-sm  pt-2 pr-4 pl-4 pb-2 w-full'>
-                                    {key}
+                        ArrayNation.map((nation) =>(
+                            <DropdownMenuItem key={nation.id} className='!bg-[#1b1a22]/10 p-0 w-full' >
+                                <a href={nation.url} className='hover:text-yellow-300 capitalize hover:bg-[#22242c] rounded-sm  pt-2 pr-4 pl-4 pb-2 w-full'>
+                                    {nation.name}
                                 </a>
                             </DropdownMenuItem>
                         ))
