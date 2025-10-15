@@ -7,6 +7,16 @@
         html{
             font-size: 14px;
         }
+
+    }
+    @media (max-width: 1940px) {
+        html{
+            font-size: 14px;
+        }
+        .button_hidden{
+            display: none;
+        }
+
     }
     @media (max-width: 1536px) {
         html{
@@ -63,8 +73,16 @@
 a{
     cursor: pointer;
 }
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;     /* Firefox */
+}
 @theme inline {
-    --background-color-index: #242424;
+    --background-color-index: #191b24;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
