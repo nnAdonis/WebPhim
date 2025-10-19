@@ -3,6 +3,7 @@ import SearchInput from "../../components/ui/Search";
 import {Dropdown, DropdownNation, DropdownNotifi, DropdownProfile} from "../../components/ui/Dropdown.tsx";
 import {useEffect, useState} from "react";
 import {Bell, MonitorDown, Search, X} from "lucide-react";
+import Login from "../../components/Login.tsx";
 
 
 const HeaderHome = () => {
@@ -51,7 +52,7 @@ const HeaderHome = () => {
                           <div className=" 2xl:w-auto 2xl:gap-7 justify-center gap-4.5 hidden xl:flex ">
                               {
                                   arrayMenu.map((item, i) => (
-                                      <a className={'hover:text-yellow-300 capitalize'} key={i}>{i === arrayMenu.length-1 ?(
+                                      <a className={'hover:text-yellow-300 capitalize hover:scale-110 hover:font-medium transition-[transform] duration-300 outline-none'} key={i}>{i === arrayMenu.length-1 ?(
                                           <>
                                               <span className="text-black bg-[#ffd875] rounded-sm pl-1 pr-1 mr-2 ml-2">new</span>{item}
                                           </>
@@ -74,7 +75,10 @@ const HeaderHome = () => {
                                   <p className={`font-bold`}>RoPhim</p>
                               </div>
                           </a>
-                          <div className={`flex items-center justify-center gap-5`}>
+                          {/*ki chưa đăng nhập*/}
+                          <Login/>
+                          {/*khi đã đăng nhập*/}
+                          <div className={`hidden items-center justify-center gap-5`}>
                               <DropdownNotifi/>
                               <DropdownProfile/>
                           </div>

@@ -44,10 +44,10 @@ const CardMovie = () => {
             </button>
 
             {/* Danh sách phim */}
-            <div ref={scrollRef} className="flex overflow-x-auto scrollbar-none gap-4 scroll-smooth">
+            <div ref={scrollRef} className="flex overflow-x-auto scrollbar-none scroll-smooth ">
                 {movies.map((movie) => (
-                    <div key={movie.id} className="flex flex-col gap-4 ">
-                        <div className="relative min-w-52 2xl:min-w-68 rounded-lg overflow-hidden mb-3 max-h-110">
+                    <div key={movie.id} className=" group flex flex-col gap-4 p-4 hover:bg-[#3f3f3f] rounded-lg  transition-all duration-1000">
+                        <div className="relative min-w-52 2xl:min-w-68 rounded-lg group-hover:rounded-none group-hover:scale-102 transition-all duration-1000 overflow-hidden mb-3 max-h-110">
                             <a href="#">
                                 <img className="w-full h-full object-cover" src={movie.img} alt={movie.title} />
                             </a>

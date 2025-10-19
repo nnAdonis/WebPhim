@@ -20,6 +20,7 @@ import {
 import Avata from "../Avata.tsx";
 import {useState} from "react";
 import {ArrayJewery, ArrayNation} from "../../lib/Data.ts";
+import Login from "../Login.tsx";
 
 const Dropdown = () => {
 
@@ -140,7 +141,8 @@ const DropdownProfile = ()=>{
                     }
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className={`xl:mt-1 mt-3 xl:mr-10 ml-1 xl:w-52 w-100 xl:bg-[#282c43] bg-[#323c6d] p-0 text-white border-none`}>
-                    <DropdownMenuGroup className={``}>
+                    <DropdownMenuGroup className={`hidden`}>
+
                         <div className={`xl:ml-3 ml-8 mb-3 flex gap-2.5 flex-col mt-3 mr-6 xl:mr-3`}>
                             <div className={`flex justify-between`}>
                                 <div className={`flex gap-2.5 flex-col w-70 xl:w-auto`}>
@@ -196,8 +198,13 @@ const DropdownProfile = ()=>{
                             <LogIn size={16} strokeWidth={2.25} className={`hidden`}/>
                         </div>
                     </DropdownMenuGroup>
+                    <DropdownMenuGroup className={`pb-4 pt-4 pl-2 pr-6`}>
+                        <div className={`xl:hidden ml-2`}>
+                            <Login/>
+                        </div>
+                    </DropdownMenuGroup>
                     <DropdownMenuGroup className={'xl:hidden bg-[#3f4b88] pb-6 pt-6'}>
-                        <DropdownMenuItem className={`bg-[#4c5790] ml-8 mr-6`}>
+                        <DropdownMenuItem className={`bg-[#4c5790] ml-4 mr-6 transition-all duration-300`}>
                             <a href={`#`} className={`flex items-center justify-center gap-4`}>
                                 <MonitorDown className={`text-yellow-300`}/>
                                 <div>
@@ -206,7 +213,7 @@ const DropdownProfile = ()=>{
                                 </div>
                             </a>
                         </DropdownMenuItem>
-                        <div className={`grid grid-cols-2 gap-5 ml-8 mt-5`}>
+                        <div className={`grid grid-cols-2 gap-5 ml-4 mt-6`}>
                             {
                                 arrayMenu.map((item, i) => (
                                     <a className={'hover:text-yellow-300 capitalize'} key={i}>{i === arrayMenu.length-1 ?(
